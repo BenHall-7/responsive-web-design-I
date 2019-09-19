@@ -63,7 +63,6 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 15px;
 }
 
-/* Copy and paste your work from yesterday here and start to refactor into flexbox */
 body {
     padding: 0 5%;
 }
@@ -78,7 +77,6 @@ a:hover {
 }
 
 .image-container {
-    /*display: inline-block;*/
     vertical-align: middle;
 }
 
@@ -97,10 +95,6 @@ a:hover {
     to {
         text-shadow: 0 0 2px #800000C0;
     }
-}
-
-header {
-    margin-bottom: 60px;
 }
 
 header {
@@ -192,4 +186,69 @@ address {
 footer {
     text-align: center;
     margin-bottom: 60px;
+}
+
+@media (max-width: 800px) {
+    header {
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+        background: orange;
+    }
+
+    header nav {
+        flex-grow: 0;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    header .image-container {
+        flex-grow: 0;
+    }
+
+    #header-bottom {
+        padding-top: 120px;
+    }
+
+    #header-bottom .image-container {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    header {
+        position: static;
+        width: 100%;
+        padding-bottom: 0;
+        border-bottom: 1px solid black;
+    }
+    
+    header nav {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    header nav a {
+        text-align: center;
+        width: 100%;
+        font-size: 1.4em;
+        padding: 15px 0;
+        border-top: 1px solid black;
+    }
+
+    #header-bottom {
+        padding-top: 0;
+        margin-top: 30px;
+    }
+
+    .column {
+        flex-direction: column;
+    }
+
+    .column div {
+        margin: 40px 0 0;
+    }
+
+    .column .first-col {
+        margin: 0;
+    }
 }
