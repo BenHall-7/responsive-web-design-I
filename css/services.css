@@ -63,6 +63,7 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 15px;
 }
 
+/* Copy and paste your work from yesterday here and start to refactor into flexbox */
 body {
     padding: 0 5%;
 }
@@ -72,11 +73,28 @@ a {
     text-decoration: none;
 }
 
+h1 {
+    font-size: 1.5em;
+}
+
+p, li {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+ul {
+    list-style: square;
+    list-style-position: inside;
+}
+
 a:hover {
     text-decoration: underline;
 }
 
 .image-container {
+    /*display: inline-block;*/
     vertical-align: middle;
 }
 
@@ -86,9 +104,13 @@ a:hover {
 }
 
 .button-style {
+    display: inline-block;
     border: 1px solid black;
     color: black;
     padding: 4px 40px;
+    border-radius: 4px;
+    background: white;
+    margin-top: 20px;
 }
 
 @keyframes nav-anim {
@@ -130,62 +152,52 @@ header nav a:hover {
 }
 
 #header-bottom {
-	display: flex;
-	justify-content: center;
-	align-items: center;
     padding-top: 100px;
     padding-bottom: 60px;
-    text-align: center;
     border-bottom: 1px solid black;
 }
 
-#header-bottom div {
-    vertical-align: middle;
+#header-bottom h1 {
+    margin-top: 20px;
 }
 
-#header-bottom .image-container {
-    margin-left: 8%;
-}
-
-#middle {
-    margin-top:  60px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.column {
-	display: flex;
-}
-
-.column div {
-	margin-left: 10px;
-}
-
-.column .first-col {
-	margin: 0
-}
-
-.column p {
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 1.1em;
-}
-
-.middle-img {
-    margin: 40px 0;
+.services-header-img {
     max-width: 100%;
 }
 
-address {
+#middle {
     margin-top: 60px;
     margin-bottom: 40px;
-    border-top: 1px solid black;
-    padding-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 2px solid black;
+}
+
+#middle div {
+    background: #f0f0f0;
+    border: 1px solid black;
+    padding: 20px;
+    margin-bottom: 40px;
+    /*min-width: 420px;*/
+    max-width: 48%;
+}
+
+#bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#bottom div, #bottom img {
+    min-width: 420px;
+    max-width: 48%;
 }
 
 footer {
+    margin-top: 60px;
+    margin-bottom: 20px;
     text-align: center;
-    margin-bottom: 60px;
 }
 
 @media (max-width: 800px) {
@@ -208,7 +220,7 @@ footer {
         padding-top: 120px;
     }
 
-    #header-bottom .image-container {
+    .services-header-img, .services-info-img {
         display: none;
     }
 }
@@ -240,15 +252,13 @@ footer {
         margin-top: 30px;
     }
 
-    .column {
+    #middle {
         flex-direction: column;
+        align-items: center;
     }
 
-    .column div {
-        margin: 40px 0 0;
-    }
-
-    .column .first-col {
-        margin: 0;
+    #middle div {
+        width: 100%;
+        max-width: 100%;
     }
 }
