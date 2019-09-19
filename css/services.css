@@ -120,10 +120,6 @@ a:hover {
 }
 
 header {
-    margin-bottom: 60px;
-}
-
-header {
 	display: flex;
 	justify-content: space-between;
     padding: 20px 0;
@@ -202,4 +198,69 @@ footer {
     margin-top: 60px;
     margin-bottom: 20px;
     text-align: center;
+}
+
+@media (max-width: 800px) {
+    header {
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+    }
+
+    header nav {
+        flex-grow: 0;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    header .image-container {
+        flex-grow: 0;
+    }
+
+    #header-bottom {
+        padding-top: 120px;
+    }
+
+    #header-bottom .image-container {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    header {
+        position: static;
+        width: 100%;
+        padding-bottom: 0;
+        border-bottom: 1px solid black;
+        background: none;
+    }
+    
+    header nav {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    header nav a {
+        text-align: center;
+        width: 100%;
+        font-size: 1.4em;
+        padding: 15px 0;
+        border-top: 1px solid black;
+    }
+
+    #header-bottom {
+        padding-top: 0;
+        margin-top: 30px;
+    }
+
+    .column {
+        flex-direction: column;
+    }
+
+    .column div {
+        margin: 40px 0 0;
+    }
+
+    .column .first-col {
+        margin: 0;
+    }
 }
